@@ -6,42 +6,27 @@ import joblib
 
 app = Flask(__name__)
 
-# Load your trained model
 model = joblib.load("models/churn_model.pkl")
 
 
-# Home route
 @app.route("/")
 def home():
     return render_template("index.html")
 
 
-# Prediction route
 @app.route("/predict", methods=["POST"])
 def predict():
-    try:
-        print("Prediction request received")
+    tenure = float(request.form["tenure"])
+    monthly = float(request.form["monthly_charges"])
+    total = float(request.form["total_charges"])
 
-        # Get values from HTML form
-        tenure = float(request.form["tenure"])
-        monthly_charges = float(request.form["monthly_charges"])
-        total_charges = float(request.form["total_charges"])
+    features = np.array([[tenure, monthly, total]])
+    prediction = model.predict(features)[0]
 
-        # Prepare input for model
-        features = np.array([[tenure, monthly_charges, total_charges]])
+    result = "Customer WILL CHURN ⚠️" if prediction == 1 else "Customer will NOT churn ✅"
 
-        # Predict
-        prediction = model.predict(features)[0]
-
-        # Convert result
-        result = "Customer WILL CHURN ⚠️" if prediction == 1 else "Customer will NOT churn ✅"
-
-        return render_template("index.html", prediction_text=result)
-
-    except Exception as e:
-        return f"Error: {str(e)}"
+    return render_template("index.html", prediction_text=result)
 
 
-# Run app
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
