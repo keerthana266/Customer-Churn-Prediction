@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Customer Churn Prediction</title>
+
     <style>
         body{
             font-family: Arial, sans-serif;
@@ -27,6 +28,8 @@
             width:90%;
             padding:10px;
             margin:10px;
+            border:1px solid #ccc;
+            border-radius:5px;
         }
 
         button{
@@ -36,32 +39,43 @@
             padding:12px 20px;
             cursor:pointer;
             border-radius:5px;
+            margin-top:10px;
         }
 
         button:hover{
             background:#2980b9;
         }
+
+        h3{
+            color:green;
+            margin-top:20px;
+        }
     </style>
 </head>
+
 <body>
 
 <div class="container">
 
-<h1>Customer Churn Prediction</h1>
+    <h1>Customer Churn Prediction</h1>
 
-<p>Predict whether a customer is likely to leave the service.</p>
+    <p>Predict whether a customer is likely to leave the service.</p>
 
-<form>
+    <!-- FIXED FORM -->
+    <form action="/predict" method="POST">
 
-<input type="number" placeholder="Tenure (Months)">
+        <input type="number" name="tenure" placeholder="Tenure (Months)" required>
 
-<input type="number" placeholder="Monthly Charges">
+        <input type="number" name="monthly_charges" placeholder="Monthly Charges" required>
 
-<input type="number" placeholder="Total Charges">
+        <input type="number" name="total_charges" placeholder="Total Charges" required>
 
-<button type="submit">Predict</button>
+        <button type="submit">Predict</button>
 
-</form>
+    </form>
+
+    <!-- Prediction Output -->
+    <h3>{{ prediction_text }}</h3>
 
 </div>
 
