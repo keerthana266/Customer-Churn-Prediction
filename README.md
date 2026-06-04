@@ -1,57 +1,93 @@
 # Customer Churn Prediction
 
-## Project Overview
+![Python](https://img.shields.io/badge/Python-3.14-blue)
+![Flask](https://img.shields.io/badge/Flask-Web%20Application-green)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-orange)
+![Render](https://img.shields.io/badge/Deployment-Render-purple)
 
-Customer Churn Prediction is a machine learning project that identifies customers who are likely to leave a telecom service. The project analyzes customer demographics, subscription details, billing information, and service usage patterns to understand churn behavior and support customer retention strategies.
+## 🚀 Live Demo
 
-Using classification techniques, the model learns from historical customer data and predicts whether a customer will churn. This helps businesses take proactive measures to improve customer satisfaction and reduce revenue loss.
+**Application:** https://customer-churn-prediction-3-5dsd.onrender.com
+
+**GitHub Repository:** https://github.com/keerthana266/Customer-Churn-Prediction
 
 ---
 
-## Dataset
+## 📌 Overview
 
-The project uses the Telco Customer Churn dataset, which contains information about customer demographics, account tenure, internet services, billing methods, contract types, and monthly charges. The target variable is **Churn**, indicating whether a customer has left the service.
+Customer Churn Prediction is a Machine Learning web application that predicts whether a telecom customer is likely to leave a service based on customer account and billing information.
+
+The project uses a Logistic Regression model trained on historical customer data and provides real-time predictions through a Flask-based web interface deployed on Render.
 
 ---
 
-## Technologies Used
+## 🛠️ Tech Stack
 
 * Python
-* Pandas & NumPy
-* Matplotlib & Seaborn
+* Pandas
+* NumPy
 * Scikit-learn
 * Flask
-* Jupyter Notebook
+* HTML & CSS
+* Git & GitHub
+* Render
 
 ---
 
-## Machine Learning Models
+## 🤖 Model Performance
 
-Two classification models were developed and evaluated for churn prediction. Logistic Regression achieved the highest accuracy and was selected as the final model for deployment.
+| Model               | Accuracy   |
+| ------------------- | ---------- |
+| Logistic Regression | **79.77%** |
 
-* Logistic Regression Accuracy: **82.19%**
-* Random Forest Accuracy: **79.21%**
+### Features Used
 
----
-
-## Key Insights
-
-The analysis revealed that contract type, internet service type, online security, technical support, billing preferences, and payment methods significantly influence customer churn. Customers with long-term contracts showed lower churn rates, while customers using electronic check payments were more likely to leave the service.
-
----
-
-## Project Workflow
-
-Data Collection → Data Cleaning → Exploratory Data Analysis → Feature Encoding → Train-Test Split → Model Training → Model Evaluation → Model Saving → Flask Web Application → Deployment
+* Tenure
+* Monthly Charges
+* Total Charges
 
 ---
 
-## Conclusion
+## ✨ Key Features
 
-The developed churn prediction system successfully identifies customers at risk of leaving a telecom service. With an accuracy of over 82%, the model provides valuable insights that can help businesses improve customer retention and make data-driven decisions.
+* Real-time customer churn prediction
+* Machine Learning model deployment with Flask
+* Responsive web interface
+* Cloud deployment using Render
+* End-to-end ML workflow implementation
 
 ---
 
-## Author
+## 📊 Sample Prediction
+
+### Input
+
+* Tenure: 12
+* Monthly Charges: 70
+* Total Charges: 840
+
+### Output
+
+```text
+✅ Customer is not likely to churn
+```
+
+---
+
+## 🎯 Key Learnings
+
+* Data Preprocessing
+* Exploratory Data Analysis (EDA)
+* Machine Learning Model Development
+* Flask Web Development
+* Git & GitHub Workflow
+* Cloud Deployment with Render
+
+---
+
+## 👩‍💻 Author
 
 **Dasari Keerthana**
+
+GitHub: https://github.com/keerthana266
+LinkedIn: https://www.linkedin.com/in/keerthana-dasari-0b4783285/
